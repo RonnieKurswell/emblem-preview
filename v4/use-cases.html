@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex,nofollow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use Cases · Emblem AI by Charles Elena</title>
+  <meta name="description" content="Every organisation that wants deeper audience connections has an Emblem AI use case. Professional Sports, Entertainment, Brands & Agencies, Corporate Events.">
+  <link rel="icon" type="image/svg+xml" href="images/EAI_logo.svg">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Emblem AI by Charles Elena">
+  <meta property="og:title" content="Built for every stage and arena">
+  <meta property="og:description" content="If you draw a crowd, you have an Emblem AI use case. Sport, entertainment, brands, and corporate events.">
+  <meta property="og:image" content="images/MSG - Sports.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Use Cases · Emblem AI">
+  <meta name="twitter:description" content="If you draw a crowd, you have an Emblem AI use case.">
+  <meta name="twitter:image" content="images/MSG - Sports.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  <style>
+
+    /* ─────────────────────────────────────────────
+       CE DESIGN TOKENS
+    ───────────────────────────────────────────── */
+    :root {
+      --ce-black: #000000;
+      --ce-white: #ffffff;
+      --ce-aqua: #2DE1FD;
+      --ce-magenta: #FC31BB;
+      --ce-orange: #FF7A00;
+      --ce-brand-gradient: linear-gradient(90deg, #2DE1FD 0%, #FC31BB 50%, #FF7A00 100%);
+      --d-void: #000000;
+      --d-dark: #000000;
+      --d-surface: #000000;
+      --d-surface2: #111111;
+      --d-border: rgba(255,255,255,0.08);
+      --d-border2: rgba(255,255,255,0.12);
+      --d-text-1: rgba(255,255,255,0.92);
+      --d-text-2: rgba(255,255,255,0.66);
+      --d-text-3: rgba(255,255,255,0.5);
+      --ease-cinema: cubic-bezier(0.16,1,0.3,1);
+    }
+
+    /* ─────────────────────────────────────────────
+       RESET + BASE
+    ───────────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--d-void);
+      color: var(--d-text-1);
+      overflow-x: clip;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* ─────────────────────────────────────────────
+       GRADIENT TEXT ANIMATION
+    ───────────────────────────────────────────── */
+    @keyframes gradShift {
+      0%   { background-position: 0%; }
+      100% { background-position: 200%; }
+    }
+
+    .grad-text {
+      background: var(--ce-brand-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200%;
+      animation: gradShift 14s linear infinite;
+      font-style: normal;
+    }
+
+    /* ─────────────────────────────────────────────
+       NAV
+    ───────────────────────────────────────────── */
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+      background: rgba(0,0,0,0);
+      transition: background 0.3s, backdrop-filter 0.3s;
+    }
+
+    #nav.scrolled {
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .nav-logo-icon {
+      height: 27px;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      font-family: "Roboto Condensed", "Roboto", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--d-text-1);
+      line-height: 1;
+    }
+
+    .nav-logo-sub {
+      font-family: "Roboto", sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--d-text-3);
+      margin-top: 2px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--d-text-2);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--ce-white);
+    }
+
+    .nav-links a.active {
+      color: var(--d-text-1);
+      text-decoration: underline;
+      text-decoration-color: var(--ce-aqua);
+      text-underline-offset: 5px;
+      text-decoration-thickness: 2px;
+    }
+
+    .nav-cta {
+      background: var(--ce-white);
+      color: var(--ce-black);
+      border: none;
+      border-radius: 100px;
+      height: 40px;
+      padding: 0 24px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      letter-spacing: 0.03em;
+      margin-left: 32px;
+      border-left: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .nav-cta:hover {
+      background: #f0f0f0;
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ce-white);
+    }
+
+    .nav-drawer {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.97);
+      backdrop-filter: blur(20px);
+      padding: 24px 32px;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transform: translateY(-20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s;
+    }
+
+    .nav-drawer.open {
+      transform: none;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-drawer-link {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--d-text-2);
+      text-decoration: none;
+    }
+
+    /* ─────────────────────────────────────────────
+       PAGE HERO
+    ───────────────────────────────────────────── */
+    #page-hero {
+      position: relative;
+      min-height: 70vh;
+      background: #000000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 40px 100px;
+    }
+    #page-hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      bottom: -300px;
+      pointer-events: none;
+      z-index: 1;
+      background:
+        linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.72)),
+        url('images/bg/hero-inner.jpg') right center / cover no-repeat;
+    }
+    #page-hero .hero-inner { position: relative; z-index: 2; }
+
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      height: 26px;
+      padding: 0 12px;
+      border: 1px solid rgba(45,225,253,0.3);
+      background: rgba(45,225,253,0.06);
+      border-radius: 5px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ce-aqua);
+      margin-bottom: 28px;
+    }
+
+    #page-hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--d-text-1);
+      margin-bottom: 24px;
+    }
+
+    .hero-lead {
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 300;
+      color: var(--d-text-2);
+      line-height: 1.6;
+      max-width: 560px;
+      margin: 0 auto 48px;
+    }
+
+    /* Industry anchor tabs */
+    .hero-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .hero-tab {
+      display: inline-flex;
+      align-items: center;
+      height: 34px;
+      padding: 0 18px;
+      border: 1px solid var(--d-border2);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--d-text-2);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .hero-tab:hover {
+      border-color: rgba(45,225,253,0.5);
+      color: var(--ce-white);
+      background: rgba(45,225,253,0.06);
+    }
+
+    /* ─────────────────────────────────────────────
+       DOSSIER ROWS
+    ───────────────────────────────────────────── */
+    .dossier {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      z-index: 2; /* lift above the #page-hero gradient ::after that bleeds 300px down over dossier 01 */
+      scroll-margin-top: 80px; /* clear the fixed nav on deep-link */
+    }
+
+    /* Alternating: odd rows image is left (default), even rows image right */
+    .dossier.image-right .dossier-image {
+      order: 2;
+    }
+
+    .dossier.image-right .dossier-copy {
+      order: 1;
+    }
+
+    /* Right-align everything on dossiers 2 & 4 */
+    .dossier.image-right .dossier-copy .dossier-number,
+    .dossier.image-right .dossier-copy h2,
+    .dossier.image-right .dossier-copy .dossier-lead {
+      text-align: right;
+    }
+
+    .dossier.image-right .dossier-copy .dossier-tag {
+      align-self: flex-end;
+    }
+
+    .dossier.image-right .dossier-copy .dossier-stats {
+      justify-content: flex-end;
+    }
+
+    /* Card floats onto the right-hand photo on dossiers 2 & 4 */
+    .dossier.image-right .dossier-copy .card-visual {
+      left: auto;
+      right: -230px;
+    }
+
+    /* Image column */
+    .dossier-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dossier-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      will-change: transform;
+      transition: transform 0.1s linear;
+    }
+
+    /* Scrim — left-side images */
+    .dossier:not(.image-right) .dossier-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.4), transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Scrim — right-side images */
+    .dossier.image-right .dossier-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to left, rgba(0,0,0,0.4), transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Copy column */
+    .dossier-copy {
+      background: var(--d-dark);
+      padding: 80px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Decorative number */
+    .dossier-number {
+      font-size: clamp(80px, 10vw, 140px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 20px;
+      background: var(--ce-brand-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200%;
+      animation: gradShift 14s linear infinite;
+      user-select: none;
+    }
+
+    .dossier-tag {
+      display: inline-flex;
+      align-items: center;
+      height: 26px;
+      padding: 0 12px;
+      border-radius: 5px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+
+    .dossier-tag.aqua {
+      border: 1px solid rgba(45,225,253,0.3);
+      background: rgba(45,225,253,0.06);
+      color: var(--ce-aqua);
+    }
+
+    .dossier-tag.magenta {
+      border: 1px solid rgba(252,49,187,0.3);
+      background: rgba(252,49,187,0.06);
+      color: var(--ce-magenta);
+    }
+
+    .dossier-tag.orange {
+      border: 1px solid rgba(255,122,0,0.3);
+      background: rgba(255,122,0,0.06);
+      color: var(--ce-orange);
+    }
+
+    .dossier-copy h2 {
+      font-size: clamp(30px, 3.2vw, 46px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--d-text-1);
+      margin-bottom: 20px;
+    }
+
+    .dossier-lead {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--d-text-2);
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+
+    /* Card visual — floats onto the dossier photo, vertically centred near the seam.
+       top uses calc (not transform) so the 3D tilt JS can own the transform. */
+    .card-visual {
+      position: absolute;
+      z-index: 3;
+      top: calc(50% - 140px);
+      left: -230px;
+      width: 210px;
+      height: 280px;
+      flex-shrink: 0;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: transform 0.1s ease, box-shadow 0.3s ease;
+      box-shadow: 0 40px 90px rgba(0,0,0,0.65);
+    }
+
+    .card-visual.tilting { transition: none !important; }
+
+    .card-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+
+    /* Stats row */
+    .dossier-stats {
+      display: flex;
+      gap: 40px;
+      padding: 32px 0;
+      border-top: 1px solid var(--d-border);
+      border-bottom: 1px solid var(--d-border);
+      margin: 32px 0;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      background: var(--ce-brand-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200%;
+      animation: gradShift 14s linear infinite;
+    }
+
+    .stat-number.no-grad {
+      background: none;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: var(--d-text-1);
+      background-clip: unset;
+      animation: none;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--d-text-3);
+      margin-top: 6px;
+    }
+
+    /* Industries badge row */
+    .dossier-industries {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .ind-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      height: 34px;
+      padding: 0 13px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--d-text-2);
+    }
+
+    .ind-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .ind-dot.aqua    { background: var(--ce-aqua); }
+    .ind-dot.magenta { background: var(--ce-magenta); }
+    .ind-dot.orange  { background: var(--ce-orange); }
+
+    /* Right-align badge row on dossiers 2 & 4 */
+    .dossier.image-right .dossier-copy .dossier-industries {
+      justify-content: flex-end;
+    }
+
+    /* Per-dossier CTA button */
+    .dossier-cta {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--ce-white);
+      color: var(--ce-black);
+      border: none;
+      border-radius: 100px;
+      height: 52px;
+      padding: 0 32px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Roboto', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.2s;
+      width: fit-content;
+    }
+    .dossier-cta:hover {
+      background: #f5f5f5;
+      transform: translateY(-2px);
+    }
+    /* Right-align CTA on dossiers 2 & 4 */
+    .dossier.image-right .dossier-copy .dossier-cta { align-self: flex-end; }
+
+    /* ─────────────────────────────────────────────
+       REVEAL ANIMATIONS
+    ───────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s var(--ease-cinema), transform 0.7s var(--ease-cinema);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ─────────────────────────────────────────────
+       FINAL CTA
+    ───────────────────────────────────────────── */
+    #final-cta {
+      background: var(--d-void);
+      padding: 140px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #final-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--ce-brand-gradient);
+    }
+
+    #final-cta::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 400px;
+      background: radial-gradient(ellipse 700px 400px at 50% 50%, rgba(45,225,253,0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .final-cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    #final-cta h2 {
+      font-size: clamp(40px, 5.5vw, 72px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--d-text-1);
+      margin-bottom: 24px;
+    }
+
+    #final-cta .lead {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--d-text-2);
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+
+    .cta-btn-large {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ce-white);
+      color: var(--ce-black);
+      border: none;
+      border-radius: 100px;
+      height: 52px;
+      padding: 0 32px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Roboto', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .cta-btn-large:hover {
+      background: #f5f5f5;
+      transform: translateY(-2px);
+    }
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+    #footer {
+      background: var(--d-void);
+      border-top: 1px solid var(--d-border);
+      padding: 80px 48px 40px;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .footer-brand { grid-column: 1; }
+
+    .footer-logo {
+      margin-bottom: 16px;
+    }
+
+    .footer-brand-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--d-text-3);
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-col-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--d-text-3);
+      margin-bottom: 16px;
+    }
+
+    .footer-col-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-col-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--d-text-2);
+      transition: color 0.2s;
+    }
+
+    .footer-col-links a:hover {
+      color: var(--d-text-1);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 32px;
+      border-top: 1px solid var(--d-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--d-text-3);
+    }
+
+    /* ─────────────────────────────────────────────
+       MODAL
+    ───────────────────────────────────────────── */
+    #modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s var(--ease-cinema);
+    }
+
+    #modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .modal-box {
+      position: relative;
+      z-index: 2;
+      background: var(--d-surface);
+      border: 1px solid var(--d-border2);
+      border-radius: 4px;
+      width: 100%;
+      max-width: 560px;
+      padding: 56px;
+      transform: translateY(20px) scale(0.98);
+      transition: transform 0.4s var(--ease-cinema);
+      max-height: 90vh;
+      overflow-y: auto;
+      margin: 0 16px;
+    }
+
+    #modal.open .modal-box {
+      transform: none;
+    }
+
+    .modal-top-rule {
+      height: 3px;
+      background: var(--ce-brand-gradient);
+      border-radius: 2px;
+      margin-bottom: 40px;
+      width: 48px;
+    }
+
+    .modal-title {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--d-text-1);
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+
+    .modal-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--d-text-2);
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--d-text-3);
+      transition: color 0.2s;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .modal-close:hover {
+      color: var(--d-text-1);
+    }
+
+    .modal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .modal-success {
+      display: none;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .modal-success.visible {
+      display: block;
+    }
+
+    .modal-success-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(45,225,253,0.1);
+      border: 1px solid rgba(45,225,253,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 24px;
+      color: var(--ce-aqua);
+    }
+
+    .modal-success h3 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--d-text-1);
+      margin-bottom: 12px;
+    }
+
+    .modal-success p {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--d-text-2);
+      line-height: 1.6;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--d-text-3);
+    }
+
+    .form-input,
+    .form-select {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--d-border2);
+      border-radius: 4px;
+      padding: 14px 16px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--d-text-1);
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .form-input:focus,
+    .form-select:focus {
+      border-color: rgba(45,225,253,0.4);
+      background: rgba(45,225,253,0.03);
+    }
+
+    .form-input::placeholder {
+      color: var(--d-text-3);
+    }
+
+    .form-select {
+      appearance: none;
+      cursor: pointer;
+      padding-right: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1L6 6L11 1' stroke='rgba(255,255,255,0.35)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 12px 7px;
+    }
+
+    .form-select option {
+      background: #111;
+      color: var(--d-text-1);
+    }
+
+    .modal-submit {
+      background: var(--ce-white);
+      color: var(--ce-black);
+      border: none;
+      border-radius: 100px;
+      height: 52px;
+      padding: 0 32px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Roboto', sans-serif;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .modal-submit:hover {
+      background: #f5f5f5;
+      transform: translateY(-1px);
+    }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      #nav {
+        padding: 0 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      #page-hero {
+        padding: 120px 24px 80px;
+      }
+
+      .dossier {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .dossier-image {
+        height: 300px;
+        position: relative;
+      }
+
+      .dossier-image img {
+        position: absolute;
+      }
+
+      .dossier.image-right .dossier-image {
+        order: 1;
+      }
+
+      .dossier.image-right .dossier-copy {
+        order: 2;
+      }
+
+      .dossier-copy {
+        padding: 48px 32px;
+      }
+
+      .card-visual {
+        position: static;
+        top: auto;
+        left: auto;
+        right: auto;
+        margin: 0 0 24px 0;
+        width: 160px;
+        height: 213px;
+        align-self: flex-start;
+      }
+      .dossier.image-right .dossier-copy .card-visual {
+        left: auto;
+        right: auto;
+        align-self: flex-end;
+      }
+
+      .dossier-number {
+        font-size: 80px;
+        margin-bottom: -12px;
+      }
+
+      .dossier-stats {
+        gap: 24px;
+      }
+
+      .stat-number {
+        font-size: 28px;
+      }
+
+      #final-cta {
+        padding: 100px 24px;
+      }
+
+      #footer {
+        padding: 60px 24px 32px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-box {
+        padding: 40px 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* ─────────────────────────────────────────────
+       REDUCED MOTION
+    ───────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    #scroll-progress {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      z-index: 600;
+      background: transparent;
+    }
+    #scroll-progress-fill {
+      height: 100%;
+      width: 100%;
+      background: var(--ce-brand-gradient);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.08s linear;
+    }
+
+  
+    .footer-social { display: flex; gap: 14px; margin-top: 20px; }
+    .footer-social a { display: inline-flex; color: var(--d-text-3); transition: color 0.2s, transform 0.2s; }
+    .footer-social a:hover { color: var(--ce-white); transform: translateY(-2px); }
+</style>
+</head>
+<body>
+
+  <div id="scroll-progress"><div id="scroll-progress-fill"></div></div>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Emblem AI by Charles Elena">
+      <svg class="nav-logo-icon" width="19" height="29" viewBox="0 0 19 29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M15.5 0.5H3.5C1.84315 0.5 0.5 1.84315 0.5 3.5V25.5C0.5 27.1569 1.84315 28.5 3.5 28.5H15.5C17.1569 28.5 18.5 27.1569 18.5 25.5V3.5C18.5 1.84315 17.1569 0.5 15.5 0.5Z" stroke="white"/>
+        <path d="M10.1846 10.047C10.2567 9.84619 10.4369 9.73289 10.6275 9.72774C10.818 9.72259 11.0086 9.84619 11.0807 10.0419L11.4051 10.9328C11.709 11.7723 12.3682 12.4212 13.2128 12.725L14.078 13.0392C14.2634 13.101 14.3818 13.2812 14.3818 13.4666C14.3818 13.6675 14.2685 13.8529 14.0728 13.9198L13.2076 14.234C12.3682 14.5378 11.709 15.1816 11.4 16.0262L11.0807 16.9171C11.0137 17.1077 10.8386 17.2261 10.6532 17.2313C10.4524 17.2364 10.2618 17.118 10.1949 16.9223L9.88074 16.0571C9.57689 15.2228 8.94344 14.5636 8.10914 14.2597L7.20275 13.9301C7.0122 13.8632 6.89375 13.6829 6.8886 13.4924C6.88345 13.3018 7.00705 13.1061 7.20275 13.034L8.10915 12.7044C8.94344 12.4006 9.58204 11.7414 9.88074 10.9071L10.1897 10.047L10.1846 10.047ZM10.6275 11.077C10.2464 12.21 9.39664 13.0701 8.23789 13.4769C9.39149 13.8889 10.2412 14.7438 10.6275 15.8768C11.024 14.7284 11.8789 13.8786 13.0222 13.4769C11.8789 13.0752 11.024 12.2255 10.6275 11.077Z" fill="url(#eai-g0)"/>
+        <path d="M6.30179 15.3884C6.36874 15.203 6.53354 15.0948 6.71379 15.0948C6.89404 15.0948 7.05369 15.203 7.11549 15.3781L7.28029 15.8261C7.40904 16.1866 7.68199 16.475 8.04764 16.6038L8.52144 16.7789C8.69654 16.8458 8.80469 17.0055 8.80469 17.1857C8.80469 17.366 8.69654 17.5256 8.51629 17.5874L8.04249 17.7625C7.68714 17.8913 7.41419 18.1745 7.28544 18.5299L7.12064 18.9882C7.05369 19.1633 6.89404 19.2715 6.71379 19.2715C6.53354 19.2715 6.36874 19.1582 6.30179 18.9728L6.14729 18.5453C6.00824 18.1642 5.71469 17.8758 5.33359 17.7368L4.88554 17.572C4.71559 17.5102 4.61774 17.3454 4.61774 17.1754C4.61774 16.9952 4.72589 16.8304 4.90099 16.7686L5.30269 16.6244C5.68894 16.4853 5.99794 16.2021 6.13699 15.8158L6.29664 15.3832L6.30179 15.3884ZM6.71379 16.4235C6.53354 16.7377 6.28119 16.9797 5.96189 17.1857C6.29149 17.3866 6.52324 17.6338 6.71379 17.9376C6.90949 17.608 7.15669 17.3763 7.46054 17.1857C7.14124 16.9849 6.89404 16.748 6.70864 16.4287L6.71379 16.4235Z" fill="url(#eai-g1)"/>
+        <path d="M12 1.00586H16C17.1046 1.00586 18 1.90129 18 3.00586V7.00586L12 1.00586Z" fill="#2DE1FD"/>
+        <defs>
+          <linearGradient id="eai-g0" x1="5.33816" y1="18.7785" x2="13.528" y2="11.0652" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#2DE1FD"><animate attributeName="stop-color" values="#2DE1FD;#FC31BB;#FF7A00;#2DE1FD" dur="4s" repeatCount="indefinite"/></stop>
+            <stop offset="0.5" stop-color="#FC31BB"><animate attributeName="stop-color" values="#FC31BB;#FF7A00;#2DE1FD;#FC31BB" dur="4s" begin="-1.33s" repeatCount="indefinite"/></stop>
+            <stop offset="1" stop-color="#FF7A00"><animate attributeName="stop-color" values="#FF7A00;#2DE1FD;#FC31BB;#FF7A00" dur="4s" begin="-2.67s" repeatCount="indefinite"/></stop>
+          </linearGradient>
+          <linearGradient id="eai-g1" x1="5.36794" y1="18.5998" x2="13.6173" y2="10.9461" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#2DE1FD"><animate attributeName="stop-color" values="#2DE1FD;#FC31BB;#FF7A00;#2DE1FD" dur="4s" repeatCount="indefinite"/></stop>
+            <stop offset="0.5" stop-color="#FC31BB"><animate attributeName="stop-color" values="#FC31BB;#FF7A00;#2DE1FD;#FC31BB" dur="4s" begin="-1.33s" repeatCount="indefinite"/></stop>
+            <stop offset="1" stop-color="#FF7A00"><animate attributeName="stop-color" values="#FF7A00;#2DE1FD;#FC31BB;#FF7A00" dur="4s" begin="-2.67s" repeatCount="indefinite"/></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div>
+        <div class="nav-logo-text">Emblem AI</div>
+        <div class="nav-logo-sub">by Charles Elena</div>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="use-cases.html" class="active">Use Cases</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Book A Demo</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-drawer" id="nav-drawer">
+    <a href="how-it-works.html" class="nav-drawer-link">How It Works</a>
+    <a href="use-cases.html" class="nav-drawer-link" style="color:var(--ce-aqua)">Use Cases</a>
+    <a href="contact.html" class="nav-drawer-link">Book A Demo</a>
+  </div>
+
+  <!-- Hero -->
+  <section id="page-hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-inner">
+      <div class="section-tag reveal">Use Cases</div>
+      <h1 class="reveal reveal-delay-1">Built for every<br><em class="grad-text">stage and arena.</em></h1>
+      <p class="hero-lead reveal reveal-delay-2">Every organisation that wants deeper audience connections has an Emblem AI use case.</p>
+      <nav class="hero-tabs reveal reveal-delay-3" aria-label="Jump to industry">
+        <a href="#sports" class="hero-tab">Professional Sports</a>
+        <a href="#entertainment" class="hero-tab">Entertainment</a>
+        <a href="#brands" class="hero-tab">Brands &amp; Agencies</a>
+        <a href="#corporate" class="hero-tab">Corporate Events</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────
+       DOSSIER 01 — Professional Sports
+  ─────────────────────────────────────────── -->
+  <section class="dossier" id="sports" data-dossier="1">
+    <div class="dossier-image" data-parallax>
+      <img src="images/MSG - Sports.jpg" alt="Professional sports stadium crowd" loading="lazy">
+    </div>
+    <div class="dossier-copy">
+      <!-- Card visual floated top-right -->
+      <div class="card-visual glow-aqua" data-tilt>
+        <img src="images/Sports - Basketball - Action.jpg" alt="Emblem AI collectible card — sports edition">
+      </div>
+
+      <div class="dossier-number reveal">01</div>
+      <div class="dossier-tag aqua reveal reveal-delay-1">Professional Sports</div>
+      <h2 class="reveal reveal-delay-1">The fan becomes<br>the collectible.</h2>
+      <p class="dossier-lead reveal reveal-delay-2">Put every fan on a premium, branded trading card in 8 seconds. Drive repeat attendance, lift sponsor value, and make match day unforgettable.</p>
+
+      <div class="dossier-stats reveal reveal-delay-2">
+        <div class="stat-item">
+          <span class="stat-number" data-target="3" data-suffix="×">3×</span>
+          <span class="stat-label">Longer fan dwell time</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="7" data-prefix="7 in ">7 in 10</span>
+          <span class="stat-label">Fans share on social</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="8" data-suffix="s">8s</span>
+          <span class="stat-label">Card generation</span>
+        </div>
+      </div>
+
+      <div class="dossier-industries reveal reveal-delay-3">
+        <span class="ind-badge"><span class="ind-dot aqua"></span>NBA</span>
+        <span class="ind-badge"><span class="ind-dot magenta"></span>NFL</span>
+        <span class="ind-badge"><span class="ind-dot orange"></span>Soccer</span>
+        <span class="ind-badge"><span class="ind-dot aqua"></span>F1</span>
+        <span class="ind-badge"><span class="ind-dot magenta"></span>Cricket</span>
+        <span class="ind-badge"><span class="ind-dot orange"></span>Rugby</span>
+      </div>
+
+      <a href="contact.html" class="dossier-cta reveal reveal-delay-3">Book a demo for your team <span aria-hidden="true">&rarr;</span></a>
+
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────
+       DOSSIER 02 — Entertainment
+  ─────────────────────────────────────────── -->
+  <section class="dossier image-right" id="entertainment" data-dossier="2">
+    <div class="dossier-copy">
+      <!-- Card visual floated top-right -->
+      <div class="card-visual glow-magenta" data-tilt>
+        <img src="images/Music Concert_Contemporary Photography.jpg" alt="Emblem AI collectible card — entertainment edition">
+      </div>
+
+      <div class="dossier-number reveal">02</div>
+      <div class="dossier-tag magenta reveal reveal-delay-1">Entertainment</div>
+      <h2 class="reveal reveal-delay-1">Inside the world<br>they love.</h2>
+      <p class="dossier-lead reveal reveal-delay-2">Turn fans into characters in the story. At festivals, premieres, and gaming events, the card becomes the souvenir that outlasts the night.</p>
+
+      <div class="dossier-stats reveal reveal-delay-2">
+        <div class="stat-item">
+          <span class="stat-number" data-target="47" data-suffix="%">47%</span>
+          <span class="stat-label">Higher brand recall vs standard merch</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Unique card styles</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">Live</span>
+          <span class="stat-label">At your venue or app</span>
+        </div>
+      </div>
+
+      <div class="dossier-industries reveal reveal-delay-3">
+        <span class="ind-badge"><span class="ind-dot aqua"></span>Music</span>
+        <span class="ind-badge"><span class="ind-dot magenta"></span>Film</span>
+        <span class="ind-badge"><span class="ind-dot orange"></span>Festivals</span>
+        <span class="ind-badge"><span class="ind-dot aqua"></span>Gaming</span>
+      </div>
+
+      <a href="contact.html" class="dossier-cta reveal reveal-delay-3">Book a demo for your event <span aria-hidden="true">&rarr;</span></a>
+
+    </div>
+    <div class="dossier-image" data-parallax>
+      <img src="images/Entertainment.jpeg" alt="Entertainment event crowd and stage lights" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────
+       DOSSIER 03 — Brands & Agencies
+  ─────────────────────────────────────────── -->
+  <section class="dossier" id="brands" data-dossier="3">
+    <div class="dossier-image" data-parallax>
+      <img src="images/Brands and Agencies.jpeg" alt="Brand activation event" loading="lazy">
+    </div>
+    <div class="dossier-copy">
+      <!-- Card visual floated top-right -->
+      <div class="card-visual glow-orange" data-tilt>
+        <img src="images/Card 4_Fashion:Lifestyle_Streetwear.jpg" alt="Emblem AI collectible card — brand edition">
+      </div>
+
+      <div class="dossier-number reveal">03</div>
+      <div class="dossier-tag orange reveal reveal-delay-1">Brands &amp; Agencies</div>
+      <h2 class="reveal reveal-delay-1">The brand becomes<br>the experience.</h2>
+      <p class="dossier-lead reveal reveal-delay-2">Your brand isn't on the card. It is the card. AI collectibles turn launches, pop-ups, and activations into content people actually want to share.</p>
+
+      <div class="dossier-stats reveal reveal-delay-2">
+        <div class="stat-item">
+          <span class="stat-number" data-target="12" data-suffix="M+">12M+</span>
+          <span class="stat-label">UGC social impressions</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="0">0</span>
+          <span class="stat-label">Design resources needed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="99.8" data-suffix="%">99.8%</span>
+          <span class="stat-label">On-time delivery</span>
+        </div>
+      </div>
+
+      <div class="dossier-industries reveal reveal-delay-3">
+        <span class="ind-badge"><span class="ind-dot aqua"></span>Experiential Marketing</span>
+        <span class="ind-badge"><span class="ind-dot magenta"></span>Activations</span>
+        <span class="ind-badge"><span class="ind-dot orange"></span>Product Launches</span>
+        <span class="ind-badge"><span class="ind-dot aqua"></span>Pop-ups</span>
+      </div>
+
+      <a href="contact.html" class="dossier-cta reveal reveal-delay-3">Book a demo for your brand <span aria-hidden="true">&rarr;</span></a>
+
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────
+       DOSSIER 04 — Corporate Events
+  ─────────────────────────────────────────── -->
+  <section class="dossier image-right" id="corporate" data-dossier="4">
+    <div class="dossier-copy">
+      <!-- Card visual floated top-right -->
+      <div class="card-visual glow-aqua" data-tilt>
+        <img src="images/Card 10_Life Sciences_Cartoon.jpg" alt="Emblem AI collectible card — corporate edition">
+      </div>
+
+      <div class="dossier-number reveal">04</div>
+      <div class="dossier-tag aqua reveal reveal-delay-1">Corporate Events</div>
+      <h2 class="reveal reveal-delay-1">Attendees become<br>the keepsakes.</h2>
+      <p class="dossier-lead reveal reveal-delay-2">Turn every delegate into a personalised collectible worth displaying. From summits to award nights, it's the rare corporate giveaway people actually keep.</p>
+
+      <div class="dossier-stats reveal reveal-delay-2">
+        <div class="stat-item">
+          <span class="stat-number" data-target="94" data-suffix="%">94%</span>
+          <span class="stat-label">Delegate satisfaction uplift</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">Built in 8s</span>
+          <span class="stat-label">Ready before they leave the booth</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Styles matched to your brand</span>
+        </div>
+      </div>
+
+      <div class="dossier-industries reveal reveal-delay-3">
+        <span class="ind-badge"><span class="ind-dot aqua"></span>Conferences</span>
+        <span class="ind-badge"><span class="ind-dot magenta"></span>Summits</span>
+        <span class="ind-badge"><span class="ind-dot orange"></span>Award Nights</span>
+        <span class="ind-badge"><span class="ind-dot aqua"></span>Team Activations</span>
+      </div>
+
+      <a href="contact.html" class="dossier-cta reveal reveal-delay-3">Book a demo for your next event <span aria-hidden="true">&rarr;</span></a>
+
+    </div>
+    <div class="dossier-image" data-parallax>
+      <img src="images/Corporate Event.jpeg" alt="Corporate event conference hall" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="final-cta">
+    <div class="final-cta-inner">
+      <h2 class="reveal">Whatever your industry,<br>your event <em class="grad-text">deserves a collectible.</em></h2>
+      <p class="lead reveal reveal-delay-1">Sport, entertainment, brand, or boardroom: book a 30-minute walkthrough and we'll tailor Emblem AI to your event.</p>
+      <a href="contact.html" class="cta-btn-large reveal reveal-delay-2">Book A Demo</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div style="font-family:'Roboto Condensed','Roboto',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">EMBLEM AI <span style="font-weight:400;letter-spacing:0.08em">by Charles Elena</span></div>
+        </div>
+        <p class="footer-brand-desc">Every event deserves a collectible. Emblem AI by <a href="https://charleselena.com.au" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.5);text-underline-offset:3px;">Charles Elena</a>.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/charleselena" target="_blank" rel="noopener" aria-label="Emblem AI on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.instagram.com/charleselena" target="_blank" rel="noopener" aria-label="Emblem AI on Instagram"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Platform</p>
+        <ul class="footer-col-links">
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="use-cases.html">Use Cases</a></li>
+          <li><a href="contact.html">Book A Demo</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Company</p>
+        <ul class="footer-col-links">
+          <li><a href="mailto:hello@charleselena.com.au">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Get in touch</p>
+        <ul class="footer-col-links">
+          <li><a href="mailto:hello@charleselena.com.au">hello@charleselena.com.au</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Emblem AI by Charles Elena. All rights reserved. &nbsp;·&nbsp; <a href="https://charleselena.com.au/privacy-policy" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.25);text-underline-offset:3px">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://charleselena.com.au/terms" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.25);text-underline-offset:3px">Terms</a></p>
+      <p class="footer-copy" style="opacity:0.5">Every event deserves a collectible.</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" role="dialog" aria-modal="true" aria-label="Book a demo">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    <div class="modal-box">
+      <div class="modal-top-rule"></div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+      </button>
+      <div id="modal-form-wrap">
+        <h2 class="modal-title">Book a demo.</h2>
+        <p class="modal-sub">Tell us about your next campaign. We'll show you what's possible.</p>
+        <form class="modal-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="f-name">Name</label>
+              <input class="form-input" id="f-name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="f-co">Company</label>
+              <input class="form-input" id="f-co" type="text" placeholder="Brand or agency" required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="f-email">Email</label>
+            <input class="form-input" id="f-email" type="email" placeholder="hello@yourbrand.com" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="f-role">Your role</label>
+            <select class="form-select" id="f-role">
+              <option value="" disabled selected>Select your role</option>
+              <option>Marketing Director</option>
+              <option>Brand Manager</option>
+              <option>Innovation / Experience Team</option>
+              <option>Event Manager</option>
+              <option>Agency / Creative</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="f-needs">Use case</label>
+              <select class="form-select" id="f-needs">
+                <option value="" disabled selected>Select your use case</option>
+                <option>Professional Sports Team</option>
+                <option>Entertainment / Events</option>
+                <option>Brand / Agency</option>
+                <option>Corporate Event</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="f-budget">Budget range</label>
+              <select class="form-select" id="f-budget">
+                <option value="" disabled selected>Select budget</option>
+                <option>Under $5,000</option>
+                <option>$5,000 – $15,000</option>
+                <option>$15,000 – $30,000</option>
+                <option>$30,000+</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="modal-submit">Send enquiry →</button>
+        </form>
+      </div>
+      <div id="modal-success" class="modal-success">
+        <div class="modal-success-icon">✓</div>
+        <h3>We'll be in touch.</h3>
+        <p>Expect a reply within one business day.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ─────────────────────────────────────────────
+       PARTICLE CANVAS
+    ───────────────────────────────────────────── */
+    (function () {
+      var canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var COLORS = [[45,225,253],[252,49,187],[255,122,0],[255,255,255]];
+      var COUNT = 150;
+      var particles = [];
+      var dpr = 1;
+      function resize() {
+        dpr = window.devicePixelRatio || 1;
+        canvas.width  = canvas.offsetWidth  * dpr;
+        canvas.height = canvas.offsetHeight * dpr;
+        for (var i = 0; i < particles.length; i++) {
+          particles[i].y = Math.min(particles[i].y, canvas.height);
+        }
+      }
+      function P(spread) {
+        var c = COLORS[Math.floor(Math.random() * COLORS.length)];
+        this.r = c[0]; this.g = c[1]; this.b = c[2];
+        this.x    = spread ? Math.random() * canvas.width : -dpr * 10;
+        this.y    = Math.random() * canvas.height;
+        this.vx   = (Math.random() * 1.6 + 0.6) * dpr;
+        this.vy   = (Math.random() - 0.5) * 0.08 * dpr;
+        this.base = (Math.random() * 1.0 + 0.4) * dpr;
+        this.phase = Math.random() * Math.PI * 2;
+        this.pspd  = 0.008 + Math.random() * 0.012;
+      }
+      P.prototype.update = function () {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.phase += this.pspd;
+        if (this.x > canvas.width + dpr * 12) {
+          this.x = -dpr * 10;
+          this.y = Math.random() * canvas.height;
+        }
+      };
+      P.prototype.draw = function () {
+        var pct  = this.x / canvas.width;
+        var ed   = Math.min(pct, 1 - pct);
+        var ef   = Math.max(0, 1 - ed / 0.11);
+        var strX = this.base * (1 + ef * 28);
+        var strY = this.base * Math.max(0.18, 1 - ef * 0.9);
+        var pulse = (Math.sin(this.phase) * 0.5 + 0.5);
+        var alpha = pulse * 0.44 * (1 - ef * 0.60);
+        if (alpha <= 0.003) return;
+        ctx.beginPath();
+        ctx.ellipse(this.x, this.y, strX, strY, 0, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + this.r + ',' + this.g + ',' + this.b + ',' + alpha.toFixed(3) + ')';
+        ctx.fill();
+      };
+      for (var i = 0; i < COUNT; i++) particles.push(new P(true));
+      function loop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < COUNT; i++) { particles[i].update(); particles[i].draw(); }
+        requestAnimationFrame(loop);
+      }
+      window.addEventListener('resize', resize);
+      resize();
+      requestAnimationFrame(function () {
+        resize();
+        for (var i = 0; i < COUNT; i++) { particles[i].y = Math.random() * canvas.height; }
+        for (var p = 0; p < COUNT; p++) { for (var f = 0; f < 180; f++) { particles[p].update(); } }
+        loop();
+      });
+    })();
+
+    /* ─────────────────────────────────────────────
+       NAV SCROLL
+    ───────────────────────────────────────────── */
+    var nav = document.getElementById('nav');
+    function updateNav() {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    /* ─────────────────────────────────────────────
+       HAMBURGER
+    ───────────────────────────────────────────── */
+    var hamburger = document.getElementById('nav-hamburger');
+    var drawer = document.getElementById('nav-drawer');
+    hamburger.addEventListener('click', function () {
+      drawer.classList.toggle('open');
+    });
+
+    /* ─────────────────────────────────────────────
+       SCROLL REVEAL
+    ───────────────────────────────────────────── */
+    var revealEls = document.querySelectorAll('.reveal');
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+    /* ─────────────────────────────────────────────
+       STAT COUNTER ANIMATION
+    ───────────────────────────────────────────── */
+    function animateStat(el) {
+      var raw = el.getAttribute('data-target');
+      if (!raw) return;
+      var target = parseFloat(raw);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var prefix = el.getAttribute('data-prefix') || '';
+      var isDecimal = raw.indexOf('.') !== -1;
+      var duration = 1400;
+      var startTime = null;
+      function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+      function step(ts) {
+        if (!startTime) startTime = ts;
+        var elapsed = ts - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        var eased = easeOut(progress);
+        var current = target * eased;
+        var display = isDecimal ? current.toFixed(1) : Math.round(current);
+        el.textContent = prefix + display + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = prefix + (isDecimal ? target.toFixed(1) : target) + suffix;
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    var statNumbers = document.querySelectorAll('.stat-number[data-target]');
+    var statObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateStat(entry.target);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    statNumbers.forEach(function (el) { statObserver.observe(el); });
+
+    /* ─────────────────────────────────────────────
+       CARD MOUSE TILT — listeners on the card only
+    ───────────────────────────────────────────── */
+    var tiltCards = document.querySelectorAll('[data-tilt]');
+    tiltCards.forEach(function (card) {
+      var raf      = null;
+      var cardRect = null;
+
+      card.addEventListener('mouseenter', function () {
+        card.classList.add('tilting');
+        cardRect = card.getBoundingClientRect();
+      });
+
+      card.addEventListener('mousemove', function (e) {
+        if (raf) cancelAnimationFrame(raf);
+        var cx = e.clientX, cy = e.clientY;
+        raf = requestAnimationFrame(function () {
+          if (!cardRect) return;
+          var x  = cx - cardRect.left;
+          var y  = cy - cardRect.top;
+          var rx = Math.max(-8, Math.min(8, ((y / cardRect.height) - 0.5) * -16));
+          var ry = Math.max(-8, Math.min(8, ((x / cardRect.width)  - 0.5) *  16));
+          card.style.transform = 'perspective(800px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
+        });
+      });
+
+      card.addEventListener('mouseleave', function () {
+        if (raf) { cancelAnimationFrame(raf); raf = null; }
+        /* Snap to 3D-zero (same type), then clear inline, then re-enable transition */
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
+        requestAnimationFrame(function () {
+          card.style.transform = '';
+          requestAnimationFrame(function () { card.classList.remove('tilting'); });
+        });
+      });
+    });
+
+    /* ─────────────────────────────────────────────
+       IMAGE PARALLAX
+    ───────────────────────────────────────────── */
+    var parallaxImages = document.querySelectorAll('[data-parallax] img');
+
+    function updateParallax() {
+      parallaxImages.forEach(function (img) {
+        var wrapper = img.parentElement;
+        var rect = wrapper.getBoundingClientRect();
+        var vh = window.innerHeight;
+        // Only apply when in or near viewport
+        if (rect.bottom < -200 || rect.top > vh + 200) return;
+        var center = rect.top + rect.height / 2 - vh / 2;
+        var offset = center * 0.15;
+        img.style.transform = 'translateY(' + offset + 'px)';
+      });
+    }
+
+    window.addEventListener('scroll', updateParallax, { passive: true });
+    updateParallax();
+
+    /* ─────────────────────────────────────────────
+       MODAL
+    ───────────────────────────────────────────── */
+    function openModal() {
+      document.getElementById('modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      var fw = document.getElementById('modal-form-wrap');
+      var ms = document.getElementById('modal-success');
+      fw.style.display = 'none';
+      ms.classList.add('visible');
+    }
+
+    // Close modal on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    var fill = document.getElementById('scroll-progress-fill');
+    function updateProgress() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      fill.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('load', updateProgress);
+
+  </script>
+
+</body>
+</html>

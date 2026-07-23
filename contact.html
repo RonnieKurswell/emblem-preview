@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex,nofollow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book A Demo · Emblem AI by Charles Elena</title>
+  <meta name="description" content="Book a 30-minute walkthrough of Emblem AI. We'll show you exactly how it works for your event or campaign. By Charles Elena.">
+  <link rel="icon" type="image/svg+xml" href="images/EAI_logo.svg">
+  <meta name="theme-color" content="#f4f2ee">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Emblem AI by Charles Elena">
+  <meta property="og:title" content="Book a Demo · Emblem AI">
+  <meta property="og:description" content="Book a 30-minute walkthrough. We'll show you exactly how Emblem works for your event.">
+  <meta property="og:image" content="images/cutouts/c-neon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Condensed:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ce-aqua:#2DE1FD; --ce-magenta:#FC31BB; --ce-orange:#FF7A00;
+      --grad-135:linear-gradient(135deg,#17c8e6 0%,#FC31BB 52%,#FF7A00 100%);
+      --paper:#f4f2ee; --paper-2:#eceae4; --white:#fff;
+      --ink:#14131a; --ink-2:#57545f; --ink-3:#8f8c98;
+      --line:rgba(20,19,26,0.10); --line-2:rgba(20,19,26,0.16);
+      --shadow-sm:0 2px 8px rgba(20,19,26,0.06),0 1px 2px rgba(20,19,26,0.08);
+      --shadow-md:0 18px 40px rgba(20,19,26,0.10),0 4px 12px rgba(20,19,26,0.06);
+      --shadow-lg:0 40px 90px rgba(20,19,26,0.16),0 10px 30px rgba(20,19,26,0.08);
+      --font:'Roboto','Helvetica Neue',Arial,sans-serif; --cond:'Roboto Condensed','Roboto',sans-serif;
+      --ease:cubic-bezier(0.16,1,0.3,1); --radius:22px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font);background:var(--paper);color:var(--ink);overflow-x:clip;-webkit-font-smoothing:antialiased;line-height:1.5;}
+    a{color:inherit;text-decoration:none;} img{display:block;max-width:100%;}
+    button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+    ::selection{background:var(--ce-magenta);color:#fff;}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+    .grad-text{background:linear-gradient(90deg,#17c8e6,#FC31BB,#FF7A00,#FC31BB,#17c8e6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:300% 100%;animation:gradShift 9s ease-in-out infinite alternate;}
+    @keyframes gradShift{from{background-position:0% 50%;}to{background-position:100% 50%;}}
+    .eyebrow{font-family:var(--cond);font-size:13px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ce-magenta);}
+
+    /* NAV */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 32px;background:rgba(244,242,238,0.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s;}
+    #nav.scrolled{border-bottom-color:var(--line);background:rgba(244,242,238,0.9);}
+    .logo{display:flex;align-items:center;gap:10px;}
+    .logo svg{height:26px;width:auto;}
+    .logo-txt{font-family:var(--cond);font-size:14px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;line-height:1;color:var(--ink);}
+    .logo-sub{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3);margin-top:3px;}
+    .nav-r{display:flex;align-items:center;gap:30px;}
+    .nav-r a.nl{font-size:15px;font-weight:500;color:var(--ink-2);transition:color .2s;}
+    .nav-r a.nl:hover,.nav-r a.nl.active{color:var(--ink);}
+    .nav-r a.nl.active{text-decoration:underline;text-decoration-color:var(--ce-aqua);text-underline-offset:6px;text-decoration-thickness:2px;}
+    .nav-cta{display:inline-flex;align-items:center;height:42px;padding:0 22px;border-radius:100px;font-size:14px;font-weight:700;letter-spacing:0.02em;color:#fff;background:var(--ink);transition:transform .2s var(--ease),box-shadow .2s;}
+    .nav-cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
+    .burger{display:none;flex-direction:column;gap:5px;padding:6px;}
+    .burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:54px;padding:0 30px;border-radius:100px;font-size:15px;font-weight:700;letter-spacing:0.02em;transition:transform .2s var(--ease),box-shadow .2s;}
+    .btn-primary{background:var(--ink);color:#fff;box-shadow:var(--shadow-md);}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+
+    /* PAGE HERO */
+    #phead{position:relative;padding:150px 0 40px;overflow:hidden;}
+    #phead::before{content:'';position:absolute;inset:0;z-index:0;background:radial-gradient(50% 60% at 88% 0%,rgba(252,49,187,0.12),transparent 70%),radial-gradient(45% 55% at 6% 20%,rgba(45,225,253,0.14),transparent 70%);}
+    .phead-in{position:relative;z-index:1;max-width:720px;}
+    .phead-in h1{font-size:clamp(40px,5vw,68px);font-weight:300;letter-spacing:-0.03em;line-height:1.02;margin:16px 0 18px;}
+    .phead-in h1 strong{font-weight:900;}
+    .phead-in p{font-size:19px;color:var(--ink-2);max-width:540px;}
+    .float-card{position:absolute;z-index:1;pointer-events:none;filter:drop-shadow(0 26px 40px rgba(20,19,26,0.22));}
+    .float-card img{width:100%;}
+    .pc-1{top:120px;right:60px;width:150px;transform:rotate(9deg);animation:floaty 8s ease-in-out infinite;}
+    @keyframes floaty{0%,100%{translate:0 0;}50%{translate:0 -16px;}}
+    @media(max-width:900px){.pc-1{display:none;}}
+
+    /* CONTACT LAYOUT */
+    #contact{padding:40px 0 110px;}
+    .c-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;align-items:start;}
+    .c-left h2{font-size:14px;}
+    .why-list{display:flex;flex-direction:column;gap:22px;margin:22px 0 40px;}
+    .why{display:flex;gap:14px;}
+    .why .dot{width:10px;height:10px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+    .why:nth-child(1) .dot{background:var(--ce-aqua);}
+    .why:nth-child(2) .dot{background:var(--ce-magenta);}
+    .why:nth-child(3) .dot{background:var(--ce-orange);}
+    .why p{font-size:15px;color:var(--ink-2);}
+    .why p strong{color:var(--ink);font-weight:700;}
+    .c-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:26px;}
+    .c-stat .n{font-size:34px;font-weight:900;letter-spacing:-0.02em;line-height:1;font-variant-numeric:tabular-nums;}
+    .c-stat .l{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-top:8px;}
+    .c-mail{font-size:13px;color:var(--ink-3);}
+    .c-mail a{color:var(--ce-magenta);font-weight:700;}
+
+    .form-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow-lg);}
+    .form-card h3{font-size:24px;font-weight:700;letter-spacing:-0.01em;}
+    .form-card .sub{color:var(--ink-2);font-size:15px;margin:6px 0 26px;}
+    .f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    .field{margin-bottom:18px;}
+    .field label{display:block;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px;}
+    .field input,.field select,.field textarea{width:100%;background:var(--paper);border:1px solid var(--line-2);border-radius:12px;padding:14px 15px;font-family:var(--font);font-size:15px;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s,background .15s;}
+    .field input::placeholder,.field textarea::placeholder{color:var(--ink-3);}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ce-aqua);background:#fff;box-shadow:0 0 0 3px rgba(45,225,253,0.14);}
+    .field textarea{resize:vertical;min-height:112px;}
+    .field input.invalid,.field select.invalid,.field textarea.invalid{border-color:#e5397a;background:rgba(229,57,122,0.04);}
+    .ferr{display:none;margin-top:6px;font-size:12px;font-weight:500;color:#e5397a;}
+    .ferr.show{display:block;}
+    .submit{width:100%;height:56px;border-radius:14px;background:var(--grad-135);background-size:160%;color:#fff;font-size:15.5px;font-weight:700;letter-spacing:0.02em;transition:transform .2s var(--ease),box-shadow .2s;}
+    .submit:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(252,49,187,0.32);}
+    .form-note{text-align:center;font-size:12px;color:var(--ink-3);margin-top:14px;}
+    .success{display:none;text-align:center;padding:40px 20px;}
+    .success.show{display:block;}
+    .success .ic{width:60px;height:60px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+    .success h3{font-size:26px;font-weight:700;}
+    .success p{color:var(--ink-2);margin-top:10px;}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--line);padding:64px 0 40px;background:var(--white);}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:52px;}
+    .foot-brand p{color:var(--ink-2);font-size:14px;margin:16px 0 20px;max-width:300px;}
+    .foot-social{display:flex;gap:14px;}
+    .foot-social a{color:var(--ink-3);transition:color .2s,transform .2s;}
+    .foot-social a:hover{color:var(--ink);transform:translateY(-2px);}
+    .foot-col h4{font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px;}
+    .foot-col a{display:block;color:var(--ink-2);font-size:15px;margin-bottom:12px;transition:color .2s;}
+    .foot-col a:hover{color:var(--ink);}
+    .foot-bot{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--line);flex-wrap:wrap;gap:12px;}
+    .foot-bot p,.foot-bot a{font-size:13px;color:var(--ink-3);}
+    .foot-bot a{text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:3px;}
+
+    .rv{opacity:0;transform:translateY(28px);filter:blur(6px);transition:opacity .8s var(--ease),transform .8s var(--ease),filter .8s var(--ease);}
+    .rv.in{opacity:1;transform:none;filter:none;}
+    @media(prefers-reduced-motion:reduce){.rv{transition:opacity .3s;transform:none;filter:none;}.pc-1{animation:none;}}
+
+    @media(max-width:900px){.c-grid{grid-template-columns:1fr;gap:36px;}.foot-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:620px){.wrap{padding:0 20px;}.nav-r .nl{display:none;}.burger{display:flex;}.f-row{grid-template-columns:1fr;}.form-card{padding:26px 20px;}.foot-grid{grid-template-columns:1fr;gap:32px;}}
+  </style>
+</head>
+<body>
+  <nav id="nav">
+    <a class="logo" href="index.html" aria-label="Emblem AI by Charles Elena">
+      <svg viewBox="0 0 19 29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15.5 0.5H3.5C1.84 0.5 0.5 1.84 0.5 3.5V25.5C0.5 27.16 1.84 28.5 3.5 28.5H15.5C17.16 28.5 18.5 27.16 18.5 25.5V3.5C18.5 1.84 17.16 0.5 15.5 0.5Z" stroke="#14131a"/><path d="M12 1.01H16C17.1 1.01 18 1.9 18 3.01V7.01L12 1.01Z" fill="#2DE1FD"/></svg>
+      <div><div class="logo-txt">Emblem AI</div><div class="logo-sub">by Charles Elena</div></div>
+    </a>
+    <div class="nav-r">
+      <a class="nl" href="how-it-works.html">How It Works</a>
+      <a class="nl" href="use-cases.html">Use Cases</a>
+      <a class="nav-cta" href="try.html">Try It Free</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <header id="phead">
+    <div class="float-card pc-1"><img src="images/cutouts/herocard-1.png" alt=""></div>
+    <div class="wrap phead-in">
+      <span class="eyebrow">Get in touch</span>
+      <h1>Let's make your event<br><strong class="grad-text">worth collecting.</strong></h1>
+      <p>Book a 30-minute walkthrough. No pitch deck, no pressure, just a real look at how Emblem works for your event.</p>
+    </div>
+  </header>
+
+  <section id="contact">
+    <div class="wrap c-grid">
+      <div class="c-left rv">
+        <span class="eyebrow">What to expect</span>
+        <div class="why-list">
+          <div class="why"><span class="dot"></span><p><strong>30-minute discovery call.</strong> No pitch deck, no pressure, just a real walkthrough of what we've built.</p></div>
+          <div class="why"><span class="dot"></span><p><strong>Tailored to your world.</strong> Sport, entertainment, brand activations, or corporate. You'll see examples that fit.</p></div>
+          <div class="why"><span class="dot"></span><p><strong>A clear path forward.</strong> Timeline, production process, and a ballpark quote before we hang up.</p></div>
+        </div>
+        <div class="c-stats">
+          <div class="c-stat"><div class="n grad-text" data-count="8" data-suffix="s">8s</div><div class="l">To generate</div></div>
+          <div class="c-stat"><div class="n grad-text" data-count="50" data-suffix="+">50+</div><div class="l">Art styles</div></div>
+          <div class="c-stat"><div class="n grad-text" data-count="99.8" data-suffix="%" data-decimals="1">99.8%</div><div class="l">On-time delivery</div></div>
+          <div class="c-stat"><div class="n grad-text" data-count="40" data-suffix="+">40+</div><div class="l">Brand partners</div></div>
+        </div>
+        <p class="c-mail">Prefer email? <a href="mailto:hello@charleselena.com.au">hello@charleselena.com.au</a></p>
+      </div>
+
+      <div class="form-card rv">
+        <div id="form-wrap">
+          <h3>Tell us about your event.</h3>
+          <p class="sub">The more you share, the better we can tailor the call.</p>
+          <form id="cform" novalidate>
+            <div class="f-row">
+              <div class="field"><label for="c-name">Name</label><input id="c-name" type="text" placeholder="Your name" required><span class="ferr" id="e-name">Please enter your name.</span></div>
+              <div class="field"><label for="c-co">Company</label><input id="c-co" type="text" placeholder="Brand or agency" required><span class="ferr" id="e-co">Please enter your company.</span></div>
+            </div>
+            <div class="field"><label for="c-email">Email</label><input id="c-email" type="email" placeholder="hello@yourbrand.com" required><span class="ferr" id="e-email">Please enter a valid email address.</span></div>
+            <div class="f-row">
+              <div class="field"><label for="c-type">Business type</label>
+                <select id="c-type" required>
+                  <option value="" disabled selected>Select your use case</option>
+                  <option>Professional Sports Team</option><option>Sports League or Federation</option><option>Entertainment / Events</option><option>Brand / Agency</option><option>Venue or Stadium</option><option>Corporate Event</option><option>Other</option>
+                </select><span class="ferr" id="e-type">Please select a use case.</span>
+              </div>
+              <div class="field"><label for="c-budget">Budget range</label>
+                <select id="c-budget">
+                  <option value="" disabled selected>Select budget</option>
+                  <option>Under $5,000</option><option>$5,000 to $15,000</option><option>$15,000 to $30,000</option><option>$30,000 to $60,000</option><option>$60,000+</option>
+                </select>
+              </div>
+            </div>
+            <div class="field"><label for="c-brief">Brief outline</label><textarea id="c-brief" placeholder="Tell us about your event or campaign: scale, timing, and what you're hoping to achieve."></textarea></div>
+            <button type="submit" class="submit">Request my demo</button>
+            <p class="form-note">We'll reply within one business day.</p>
+          </form>
+        </div>
+        <div class="success" id="success">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#17c8e6" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h3>Request received.</h3>
+          <p>Thanks. We'll be in touch within one business day to book your walkthrough.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <div class="logo-txt" style="color:var(--ink-2)">EMBLEM AI <span style="font-weight:400;color:var(--ink-3)">by Charles Elena</span></div>
+          <p>Any face, one tap, a collectible. Emblem AI by <a href="https://charleselena.com.au" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:3px">Charles Elena</a>.</p>
+          <div class="foot-social">
+            <a href="https://www.linkedin.com/company/charleselena" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://www.instagram.com/charleselena" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          </div>
+        </div>
+        <div class="foot-col"><h4>Platform</h4><a href="try.html">Create Your Card</a><a href="how-it-works.html">How It Works</a><a href="use-cases.html">Use Cases</a><a href="contact.html">Book A Demo</a></div>
+        <div class="foot-col"><h4>Company</h4><a href="contact.html">Contact</a><a href="https://charleselena.com.au" target="_blank" rel="noopener">Charles Elena</a></div>
+        <div class="foot-col"><h4>Get in touch</h4><a href="mailto:hello@charleselena.com.au">hello@charleselena.com.au</a></div>
+      </div>
+      <div class="foot-bot">
+        <p>© 2025 Emblem AI by Charles Elena. All rights reserved.</p>
+        <p><a href="https://charleselena.com.au/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://charleselena.com.au/terms" target="_blank" rel="noopener">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var nav=document.getElementById('nav');
+    addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>20);});
+    document.getElementById('burger').onclick=function(){location.href='contact.html';};
+
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+    var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;cio.unobserve(el);var to=parseFloat(el.dataset.count),dec=parseInt(el.dataset.decimals||'0'),suf=el.dataset.suffix||'',t0=performance.now();function s(n){var p=Math.min((n-t0)/1500,1);el.textContent=((1-Math.pow(1-p,3))*to).toFixed(dec)+suf;if(p<1)requestAnimationFrame(s);else el.textContent=to.toFixed(dec)+suf;}requestAnimationFrame(s);});},{threshold:0.6});
+    document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
+
+    /* form validation */
+    var emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var checks=[
+      {id:'c-name',err:'e-name',ok:function(v){return v.trim().length>0;}},
+      {id:'c-co',err:'e-co',ok:function(v){return v.trim().length>0;}},
+      {id:'c-email',err:'e-email',ok:function(v){return emailRe.test(v.trim());}},
+      {id:'c-type',err:'e-type',ok:function(v){return v!=='';}}
+    ];
+    document.getElementById('cform').addEventListener('submit',function(e){
+      e.preventDefault();var first=null;
+      checks.forEach(function(c){var f=document.getElementById(c.id),er=document.getElementById(c.err),ok=c.ok(f.value);f.classList.toggle('invalid',!ok);er.classList.toggle('show',!ok);if(!ok&&!first)first=f;});
+      if(first){first.focus();first.scrollIntoView({behavior:'smooth',block:'center'});return;}
+      document.getElementById('form-wrap').style.display='none';
+      document.getElementById('success').classList.add('show');
+    });
+    checks.forEach(function(c){var el=document.getElementById(c.id);var ev=el.tagName==='SELECT'?'change':'input';el.addEventListener(ev,function(){el.classList.remove('invalid');document.getElementById(c.err).classList.remove('show');});});
+  </script>
+</body>
+</html>
