@@ -1,487 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="robots" content="noindex,nofollow">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emblem AI by Charles Elena · Turn any face into a collectible</title>
-  <meta name="description" content="Emblem AI turns a single selfie into a premium branded collectible card in seconds. Try the live builder. By Charles Elena.">
-  <link rel="icon" type="image/svg+xml" href="images/EAI_logo.svg">
+  <title>Emblem AI by Charles Elena · Concept previews</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/svg+xml" href="v5/images/EAI_logo.svg">
   <meta name="theme-color" content="#f5f4f0">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Emblem AI by Charles Elena">
-  <meta property="og:title" content="Turn any face into a collectible">
-  <meta property="og:description" content="A single selfie becomes a premium branded collectible card in seconds. Try the live builder.">
-  <meta property="og:image" content="images/builder/card-neon.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Emblem AI · Turn any face into a collectible">
-  <meta name="twitter:description" content="A single selfie becomes a premium branded collectible card in seconds.">
-  <meta name="twitter:image" content="images/builder/card-neon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Condensed:wght@700;900&display=swap" rel="stylesheet">
   <style>
-    /* ═══════════ CHARLES ELENA · LIGHT ═══════════ */
-    :root {
-      --ce-aqua: #2DE1FD;
-      --ce-magenta: #FC31BB;
-      --ce-orange: #FF7A00;
-      --grad: linear-gradient(90deg, #17c8e6 0%, #FC31BB 50%, #FF7A00 100%);
-      --grad-135: linear-gradient(135deg, #17c8e6 0%, #FC31BB 52%, #FF7A00 100%);
-      --paper: #f4f2ee;      /* warm paper bg */
-      --paper-2: #eceae4;
-      --white: #ffffff;
-      --ink: #14131a;         /* primary text */
-      --ink-2: #57545f;       /* secondary */
-      --ink-3: #8f8c98;       /* muted */
-      --line: rgba(20,19,26,0.10);
-      --line-2: rgba(20,19,26,0.16);
-      --shadow-sm: 0 2px 8px rgba(20,19,26,0.06), 0 1px 2px rgba(20,19,26,0.08);
-      --shadow-md: 0 18px 40px rgba(20,19,26,0.10), 0 4px 12px rgba(20,19,26,0.06);
-      --shadow-lg: 0 40px 90px rgba(20,19,26,0.16), 0 10px 30px rgba(20,19,26,0.08);
-      --font: 'Roboto','Helvetica Neue',Arial,sans-serif;
-      --cond: 'Roboto Condensed','Roboto',sans-serif;
-      --ease: cubic-bezier(0.16,1,0.3,1);
-      --radius: 22px;
+    :root{
+      --ce-aqua:#2DE1FD; --ce-magenta:#FC31BB; --ce-orange:#FF7A00;
+      --grad-135:linear-gradient(135deg,#17c8e6 0%,#FC31BB 52%,#FF7A00 100%);
+      --paper:#f4f2ee; --white:#fff;
+      --ink:#14131a; --ink-2:#57545f; --ink-3:#8f8c98;
+      --line:rgba(20,19,26,0.10); --line-2:rgba(20,19,26,0.16);
+      --shadow-md:0 18px 40px rgba(20,19,26,0.10),0 4px 12px rgba(20,19,26,0.06);
+      --shadow-lg:0 40px 90px rgba(20,19,26,0.16),0 10px 30px rgba(20,19,26,0.08);
+      --font:'Roboto','Helvetica Neue',Arial,sans-serif;
+      --cond:'Roboto Condensed','Roboto',sans-serif;
+      --ease:cubic-bezier(0.16,1,0.3,1);
     }
-    * , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font);
-      background: var(--paper);
-      color: var(--ink);
-      overflow-x: clip;
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.5;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:var(--font); background:var(--paper); color:var(--ink);
+      min-height:100vh; display:flex; align-items:center; justify-content:center;
+      -webkit-font-smoothing:antialiased; line-height:1.5; position:relative; overflow-x:clip; padding:40px 24px;
     }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
-    ::selection { background: var(--ce-magenta); color: #fff; }
-
-    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
-    .grad-text {
-      background: linear-gradient(90deg, #17c8e6, #FC31BB, #FF7A00, #FC31BB, #17c8e6);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; background-size: 300% 100%;
-      animation: gradShift 9s ease-in-out infinite alternate;
-    }
-    @keyframes gradShift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
-    .eyebrow { font-family: var(--cond); font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ce-magenta); }
-
-    /* ═══════════ NAV ═══════════ */
-    #nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 68px; padding: 0 32px;
-      background: rgba(244,242,238,0.72); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid transparent; transition: border-color .3s, background .3s;
-    }
-    #nav.scrolled { border-bottom-color: var(--line); background: rgba(244,242,238,0.9); }
-    .logo { display: flex; align-items: center; gap: 10px; }
-    .logo svg { height: 26px; width: auto; }
-    .logo-txt { font-family: var(--cond); font-size: 14px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; color: var(--ink); }
-    .logo-sub { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-top: 3px; }
-    .nav-r { display: flex; align-items: center; gap: 30px; }
-    .nav-r a.nl { font-size: 15px; font-weight: 500; color: var(--ink-2); transition: color .2s; }
-    .nav-r a.nl:hover { color: var(--ink); }
-    .nav-cta {
-      display: inline-flex; align-items: center; height: 42px; padding: 0 22px;
-      border-radius: 100px; font-size: 14px; font-weight: 700; letter-spacing: 0.02em;
-      color: #fff; background: var(--ink); transition: transform .2s var(--ease), box-shadow .2s;
-    }
-    .nav-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-    .burger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
-    .burger span { width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
-
-    /* ═══════════ HERO / BUILDER ═══════════ */
-    #hero { position: relative; padding: 128px 0 80px; overflow: hidden; }
-    #hero::before {
-      content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    body::before{
+      content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
       background:
-        radial-gradient(55% 45% at 85% 12%, rgba(252,49,187,0.14), transparent 70%),
-        radial-gradient(45% 45% at 8% 24%, rgba(45,225,253,0.16), transparent 70%),
-        radial-gradient(50% 50% at 62% 96%, rgba(255,122,0,0.10), transparent 70%);
+        radial-gradient(40% 40% at 82% 14%, rgba(255,122,0,0.16), transparent 70%),
+        radial-gradient(42% 46% at 92% 40%, rgba(252,49,187,0.14), transparent 72%),
+        radial-gradient(46% 50% at 6% 84%, rgba(45,225,253,0.18), transparent 72%),
+        radial-gradient(40% 40% at 90% 96%, rgba(252,49,187,0.12), transparent 72%);
     }
-    /* decorative floating card cutouts (transparent PNGs) */
-    .float-card { position: absolute; z-index: 1; pointer-events: none; filter: drop-shadow(0 26px 40px rgba(20,19,26,0.24)); }
-    .float-card img { width: 100%; display: block; }
-    .fc-1 { top: 128px; left: -40px; width: 132px; transform: rotate(-12deg); animation: floaty 7s ease-in-out infinite; }
-    .fc-2 { bottom: 20px; left: 43%; width: 112px; transform: rotate(10deg); animation: floaty 8s ease-in-out infinite reverse; }
-    .fc-3 { top: 40px; right: 42%; width: 92px; transform: rotate(-6deg); animation: floaty 9s ease-in-out infinite; opacity: .95; }
-    @keyframes floaty { 0%,100%{ translate: 0 0; } 50%{ translate: 0 -16px; } }
-    @media (max-width: 940px){ .fc-3{ display:none; } }
-
-    .hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-    .hero-left { max-width: 560px; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 11px;
-      border: 1px solid var(--line-2); border-radius: 100px; font-size: 12.5px; font-weight: 500;
-      color: var(--ink-2); margin-bottom: 26px; background: rgba(255,255,255,0.6);
+    a{color:inherit; text-decoration:none;}
+    .wrap{ position:relative; z-index:1; width:100%; max-width:900px; text-align:center; }
+    .wordmark{ font-family:var(--cond); font-size:15px; font-weight:700; letter-spacing:0.26em; text-transform:uppercase; color:var(--ink); }
+    .wordmark b{ color:var(--ce-magenta); }
+    h1{ font-size:clamp(30px,4.4vw,46px); font-weight:300; letter-spacing:-0.02em; margin:22px 0 12px; color:var(--ink); }
+    h1 strong{ font-weight:900; }
+    .lead{ font-size:15.5px; color:var(--ink-2); max-width:560px; margin:0 auto 44px; }
+    .cards{ display:grid; grid-template-columns:1fr 1fr; gap:22px; text-align:left; }
+    .card{
+      position:relative; background:var(--white); border:1px solid var(--line); border-radius:22px;
+      padding:30px 30px 32px; box-shadow:var(--shadow-md); overflow:hidden;
+      transition:transform .4s var(--ease), box-shadow .3s;
     }
-    .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ce-aqua); box-shadow: 0 0 10px var(--ce-aqua); animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
-    .hero-h1 { font-size: clamp(44px, 5.6vw, 78px); font-weight: 300; line-height: 1.0; letter-spacing: -0.035em; margin-bottom: 24px; color: var(--ink); }
-    .hero-h1 strong { font-weight: 900; }
-    .hero-lead { font-size: clamp(17px,1.4vw,19px); font-weight: 400; color: var(--ink-2); max-width: 470px; margin-bottom: 34px; }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
-      height: 54px; padding: 0 30px; border-radius: 100px; font-size: 15px; font-weight: 700;
-      letter-spacing: 0.02em; transition: transform .2s var(--ease), box-shadow .2s, opacity .2s;
+    .card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+    .card .edge{ position:absolute; top:0; left:0; right:0; height:4px; background:var(--grad-135); transform:scaleX(0); transform-origin:left; transition:transform .4s var(--ease); }
+    .card:hover .edge{ transform:scaleX(1); }
+    .kicker{ font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-3); display:flex; align-items:center; gap:9px; }
+    .kicker .badge{ font-size:10px; font-weight:700; letter-spacing:0.08em; padding:3px 9px; border-radius:100px; color:#fff; }
+    .badge.cur{ background:var(--grad-135); }
+    .badge.old{ background:var(--ink); opacity:.72; }
+    .card h2{ font-size:23px; font-weight:700; margin:14px 0 8px; color:var(--ink); }
+    .card p{ font-size:14px; color:var(--ink-2); line-height:1.6; min-height:66px; }
+    .card .meta{ display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 22px; }
+    .card .meta span{ font-size:11px; font-weight:600; color:var(--ink-2); border:1px solid var(--line-2); border-radius:100px; padding:5px 11px; }
+    .open{
+      display:inline-flex; align-items:center; gap:9px; height:46px; padding:0 22px; border-radius:100px;
+      font-size:13.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#fff; background:var(--ink);
+      transition:transform .2s var(--ease), box-shadow .2s;
     }
-    .btn-primary { background: var(--ink); color: #fff; box-shadow: var(--shadow-md); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-    .btn-ghost { border: 1px solid var(--line-2); color: var(--ink); background: rgba(255,255,255,0.5); }
-    .btn-ghost:hover { border-color: var(--ink); }
-
-    /* ---- Hero sample demo ---- */
-    .builder { position: relative; z-index: 2; background: var(--white); border: 1px solid var(--line); border-radius: 26px; padding: 22px; box-shadow: var(--shadow-lg); }
-    .builder-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding: 4px 6px; }
-    .builder-head .lbl { font-family: var(--cond); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); }
-    .builder-dots { display: flex; gap: 6px; }
-    .builder-dots i { width: 9px; height: 9px; border-radius: 50%; }
-    .builder-dots i:nth-child(1){ background: var(--ce-aqua); }
-    .builder-dots i:nth-child(2){ background: var(--ce-magenta); }
-    .builder-dots i:nth-child(3){ background: var(--ce-orange); }
-    .stage { position: relative; aspect-ratio: 3/4; max-height: 420px; margin: 0 auto; width: 100%; max-width: 300px; border-radius: 18px; overflow: hidden; background: var(--paper-2); border: 1px solid var(--line); perspective: 1400px; box-shadow: var(--shadow-md); }
-    .stage-face, .stage-card { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 18px; overflow: hidden; transition: transform .8s var(--ease); }
-    .stage-face img, .stage-card img { width: 100%; height: 100%; object-fit: cover; }
-    .stage-card { transform: rotateY(180deg); }
-    .stage.flipped .stage-face { transform: rotateY(-180deg); }
-    .stage.flipped .stage-card { transform: rotateY(0deg); }
-    .scan { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0; transition: opacity .3s; }
-    .scan.on { opacity: 1; }
-    .scan::before { content: ''; position: absolute; left: 0; right: 0; height: 26%; background: linear-gradient(180deg, transparent, rgba(45,225,253,0.6), transparent); box-shadow: 0 0 30px rgba(45,225,253,0.7); animation: scanMove 1.1s linear infinite; }
-    @keyframes scanMove { 0%{ top:-26% } 100%{ top:100% } }
-    .scan-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(45,225,253,0.18) 1px,transparent 1px),linear-gradient(90deg,rgba(45,225,253,0.18) 1px,transparent 1px); background-size: 22px 22px; }
-    .stage-empty { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--ink-3); text-align: center; padding: 24px; }
-    .stage-empty svg { width: 42px; height: 42px; opacity: 0.6; }
-    .stage-empty p { font-size: 13.5px; max-width: 200px; }
-    .badge-live { position: absolute; top: 12px; left: 12px; z-index: 4; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 10px; border-radius: 100px; background: rgba(255,255,255,0.85); border: 1px solid var(--line); color: var(--ink-2); backdrop-filter: blur(6px); }
-    .builder-controls { margin-top: 20px; }
-    .ctrl-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
-    .guest-row { display: grid; grid-template-columns: repeat(6,1fr); gap: 10px; margin-bottom: 18px; }
-    .guest { position: relative; width: 100%; aspect-ratio: 1; border-radius: 12px; overflow: hidden; border: 2px solid transparent; cursor: pointer; transition: border-color .2s, transform .2s; background: var(--paper-2); }
-    .guest img { width: 100%; height: 100%; object-fit: cover; }
-    .guest:hover { transform: translateY(-2px); }
-    .guest.sel { border-color: var(--ce-magenta); box-shadow: 0 0 0 3px rgba(252,49,187,0.18); }
-    .gen-btn { width: 100%; height: 54px; border-radius: 14px; background: var(--grad-135); background-size: 160%; color: #fff; font-size: 15.5px; font-weight: 700; letter-spacing: 0.02em; display: inline-flex; align-items: center; justify-content: center; gap: 10px; transition: transform .2s var(--ease), box-shadow .2s, filter .2s; }
-    .gen-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(252,49,187,0.35); }
-    .gen-btn:disabled { filter: grayscale(0.6) opacity(0.5); cursor: not-allowed; }
-    .gen-btn.working { pointer-events: none; }
-    .gen-status { text-align: center; font-size: 12.5px; color: var(--ink-3); margin-top: 12px; min-height: 16px; }
-    .gen-status a { color: var(--ce-magenta); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
-
-    /* ═══════════ STAT STRIP ═══════════ */
-    .stat-strip { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .stat-strip .wrap { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
-    .stat { padding: 40px 24px; text-align: center; border-right: 1px solid var(--line); }
-    .stat:last-child { border-right: none; }
-    .stat .n { font-size: clamp(34px,3.4vw,46px); font-weight: 900; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
-    .stat .l { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-top: 10px; }
-
-    /* ═══════════ SECTIONS ═══════════ */
-    section.blk { padding: 110px 0; position: relative; }
-    .sec-head { max-width: 640px; margin-bottom: 56px; }
-    .sec-head h2 { font-size: clamp(32px,3.6vw,52px); font-weight: 300; letter-spacing: -0.025em; line-height: 1.06; margin-top: 16px; color: var(--ink); }
-    .sec-head h2 strong { font-weight: 900; }
-    .sec-head p { color: var(--ink-2); font-size: 18px; margin-top: 18px; }
-
-    .value-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-    .vcard { position: relative; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 34px 30px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .4s var(--ease), box-shadow .3s; }
-    .vcard:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-    .vcard .ico { width: 48px; height: 48px; border-radius: 13px; display: flex; align-items: center; justify-content: center; background: var(--paper); margin-bottom: 22px; }
-    .vcard .ico svg { width: 24px; height: 24px; }
-    .vcard h3 { font-size: 21px; font-weight: 700; margin-bottom: 10px; color: var(--ink); }
-    .vcard p { color: var(--ink-2); font-size: 15px; line-height: 1.65; }
-    .vcard .edge { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--grad); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
-    .vcard:hover .edge { transform: scaleX(1); }
-
-    .uc-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
-    .uc { position: relative; aspect-ratio: 3/4; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--tint, var(--paper-2)); display: flex; flex-direction: column; justify-content: flex-end; text-decoration: none; transition: transform .4s var(--ease), box-shadow .3s; }
-    .uc:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-    .uc-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: saturate(0.88) brightness(0.9); transition: transform .6s var(--ease); }
-    .uc:hover .uc-bg { transform: scale(1.05); }
-    .uc-person { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 96%; height: 86%; object-fit: contain; object-position: bottom; z-index: 1; filter: drop-shadow(0 14px 24px rgba(0,0,0,0.4)); transition: transform .5s var(--ease); }
-    .uc:hover .uc-person { transform: translateX(-50%) scale(1.04); }
-    .uc::after { content:''; position:absolute; inset:0; z-index:2; background: linear-gradient(180deg, rgba(20,19,26,0.15) 0%, transparent 30%, transparent 45%, rgba(20,19,26,0.72)); }
-    .uc-body { position: relative; z-index: 3; padding: 20px; }
-    .uc-body .k { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; opacity: .85; }
-    .uc-body h3 { font-size: 18px; font-weight: 700; margin: 6px 0 5px; color: #fff; }
-    .uc-body p { font-size: 12.5px; color: rgba(255,255,255,0.82); line-height: 1.5; }
-    .uc-arrow { position: absolute; top: 16px; right: 16px; z-index: 3; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.9); box-shadow: var(--shadow-sm); transition: all .3s; }
-    .uc-arrow svg { stroke: var(--ink); }
-    .uc:hover .uc-arrow { background: var(--grad-135); }
-    .uc:hover .uc-arrow svg { stroke: #fff; }
-
-    /* CTA — dark box pops on light page */
-    #cta .box { position: relative; background: var(--ink); border-radius: 32px; padding: 80px 40px; text-align: center; overflow: hidden; }
-    #cta .box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(60% 100% at 50% 0%, rgba(252,49,187,0.28), transparent 65%), radial-gradient(50% 90% at 80% 100%, rgba(45,225,253,0.2), transparent 65%); }
-    #cta .box > * { position: relative; z-index: 1; }
-    #cta .eyebrow { color: var(--ce-aqua); }
-    #cta h2 { font-size: clamp(34px,4.4vw,60px); font-weight: 300; letter-spacing: -0.025em; line-height: 1.05; color: #fff; margin-top: 14px; }
-    #cta h2 strong { font-weight: 900; }
-    #cta p { color: rgba(255,255,255,0.72); font-size: 18px; margin: 20px 0 34px; }
-    #cta .btn-primary { background: #fff; color: var(--ink); }
-
-    /* footer */
-    footer { border-top: 1px solid var(--line); padding: 64px 0 40px; background: var(--white); }
-    .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 52px; }
-    .foot-brand p { color: var(--ink-2); font-size: 14px; margin: 16px 0 20px; max-width: 300px; }
-    .foot-social { display: flex; gap: 14px; }
-    .foot-social a { color: var(--ink-3); transition: color .2s, transform .2s; }
-    .foot-social a:hover { color: var(--ink); transform: translateY(-2px); }
-    .foot-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 18px; }
-    .foot-col a { display: block; color: var(--ink-2); font-size: 15px; margin-bottom: 12px; transition: color .2s; }
-    .foot-col a:hover { color: var(--ink); }
-    .foot-bot { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; border-top: 1px solid var(--line); flex-wrap: wrap; gap: 12px; }
-    .foot-bot p, .foot-bot a { font-size: 13px; color: var(--ink-3); }
-    .foot-bot a { text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
-
-    /* reveal */
-    .rv { opacity: 0; transform: translateY(30px); filter: blur(6px); transition: opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease); }
-    .rv.in { opacity: 1; transform: none; filter: none; }
-    @media (prefers-reduced-motion: reduce){ .rv{ transition: opacity .3s; transform:none; filter:none; } .scan::before,.fc-1,.fc-2{ animation:none; } }
-
-    /* responsive */
-    @media (max-width: 940px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-      .hero-left { max-width: none; }
-      .builder { max-width: 460px; margin: 0 auto; }
-      .float-card { display: none; }
-      .value-grid { grid-template-columns: 1fr; }
-      .uc-grid { grid-template-columns: repeat(2,1fr); }
-      .stat-strip .wrap { grid-template-columns: repeat(2,1fr); }
-      .stat:nth-child(2){ border-right: none; }
-      .stat:nth-child(1),.stat:nth-child(2){ border-bottom: 1px solid var(--line); }
-      .foot-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 620px) {
-      .wrap { padding: 0 20px; }
-      .nav-r .nl { display: none; }
-      .burger { display: flex; }
-      .uc-grid { grid-template-columns: 1fr; }
-      .foot-grid { grid-template-columns: 1fr; gap: 32px; }
-      section.blk { padding: 76px 0; }
-      #cta .box { padding: 54px 24px; }
-    }
+    .open:hover{ transform:translateY(-2px); box-shadow:var(--shadow-md); }
+    .open.grad{ background:var(--grad-135); background-size:150%; }
+    .open svg{ width:15px; height:15px; }
+    .foot{ margin-top:40px; font-size:12.5px; color:var(--ink-3); }
+    @media (max-width:680px){ .cards{ grid-template-columns:1fr; } .card p{ min-height:0; } }
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <div class="wordmark">Emblem AI <b>·</b> by Charles Elena</div>
+    <h1>Concept <strong>previews</strong></h1>
+    <p class="lead">Two directions for the Emblem AI microsite. Best viewed on desktop Chrome. Give each a few seconds to load.</p>
 
-  <!-- NAV -->
-  <nav id="nav">
-    <a class="logo" href="index.html" aria-label="Emblem AI by Charles Elena">
-      <svg viewBox="0 0 19 29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M15.5 0.5H3.5C1.84 0.5 0.5 1.84 0.5 3.5V25.5C0.5 27.16 1.84 28.5 3.5 28.5H15.5C17.16 28.5 18.5 27.16 18.5 25.5V3.5C18.5 1.84 17.16 0.5 15.5 0.5Z" stroke="#14131a"/>
-        <path d="M10.18 10.05C10.26 9.85 10.44 9.73 10.63 9.73C10.82 9.72 11.01 9.85 11.08 10.04L11.41 10.93C11.71 11.77 12.37 12.42 13.21 12.73L14.08 13.04C14.26 13.1 14.38 13.28 14.38 13.47C14.38 13.67 14.27 13.85 14.07 13.92L13.21 14.23C12.37 14.54 11.71 15.18 11.4 16.03L11.08 16.92C11.01 17.11 10.84 17.23 10.65 17.23C10.45 17.24 10.26 17.12 10.19 16.92L9.88 16.06C9.58 15.22 8.94 14.56 8.11 14.26L7.2 13.93C7.01 13.86 6.89 13.68 6.89 13.49C6.88 13.3 7.01 13.11 7.2 13.03L8.11 12.7C8.94 12.4 9.58 11.74 9.88 10.91L10.19 10.05Z" fill="url(#lg)"/>
-        <path d="M12 1.01H16C17.1 1.01 18 1.9 18 3.01V7.01L12 1.01Z" fill="#2DE1FD"/>
-        <defs><linearGradient id="lg" x1="5" y1="18" x2="14" y2="11" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#2DE1FD"/><stop offset="0.5" stop-color="#FC31BB"/><stop offset="1" stop-color="#FF7A00"/>
-        </linearGradient></defs>
-      </svg>
-      <div><div class="logo-txt">Emblem AI</div><div class="logo-sub">by Charles Elena</div></div>
-    </a>
-    <div class="nav-r">
-      <a class="nl" href="how-it-works.html">How It Works</a>
-      <a class="nl" href="use-cases.html">Use Cases</a>
-      <a class="nav-cta" href="try.html">Try It Free</a>
-      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header id="hero">
-    <div class="float-card fc-1"><img src="images/cutouts/herocard-1.png" alt=""></div>
-    <div class="float-card fc-2"><img src="images/cutouts/herocard-2.png" alt=""></div>
-    <div class="float-card fc-3"><img src="images/cutouts/herocard-3.png" alt=""></div>
-    <div class="wrap hero-grid">
-      <div class="hero-left">
-        <div class="hero-badge"><span class="dot"></span> Live builder · no sign-up</div>
-        <h1 class="hero-h1">Any face.<br>One tap.<br><strong class="grad-text">A collectible.</strong></h1>
-        <p class="hero-lead">Emblem AI turns a single selfie into a premium, branded trading card. Add a photo, pick a style, and watch your collectible generate in seconds.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="try.html">Create your card</a>
-          <a class="btn btn-ghost" href="contact.html">Book a demo</a>
-        </div>
+    <div class="cards">
+      <!-- v5 · current -->
+      <div class="card">
+        <div class="edge"></div>
+        <div class="kicker">Concept 02 <span class="badge cur">Current</span></div>
+        <h2>Light — Studio Glow</h2>
+        <p>Bright editorial studio. Tricolor brand glow, a live sample builder on the homepage, and a full self-serve “create your card” trial page.</p>
+        <div class="meta"><span>Light mode</span><span>Live trial</span><span>4 pages</span></div>
+        <a class="open grad" href="v5/index.html">Open concept 2 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
 
-      <div class="builder rv" id="builder">
-        <div class="builder-head"><span class="lbl">Emblem Builder</span><span class="builder-dots"><i></i><i></i><i></i></span></div>
-        <div class="stage" id="stage">
-          <span class="badge-live" id="stageBadge">Preview</span>
-          <div class="stage-empty" id="stageEmpty">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="10" r="3"/><path d="M5 20c1.5-3 4-4.5 7-4.5s5.5 1.5 7 4.5"/></svg>
-            <p>Pick a sample to see it become a card</p>
-          </div>
-          <div class="stage-face" id="stageFace"></div>
-          <div class="stage-card" id="stageCard"></div>
-          <div class="scan" id="scan"><div class="scan-grid"></div></div>
-        </div>
-        <div class="builder-controls">
-          <div class="ctrl-label">Try a sample</div>
-          <div class="guest-row" id="guestRow"></div>
-          <button class="gen-btn" id="genBtn" disabled>Generate card</button>
-          <div class="gen-status" id="genStatus">Sample demo · no sign-up.</div>
-        </div>
+      <!-- v4 · earlier -->
+      <div class="card">
+        <div class="edge"></div>
+        <div class="kicker">Concept 01 <span class="badge old">Earlier</span></div>
+        <h2>Dark — Neon Stage</h2>
+        <p>Cinematic dark world. Neon-lit sections, marquee card hero and scroll-driven storytelling. The first direction.</p>
+        <div class="meta"><span>Dark mode</span><span>Scrollytelling</span><span>4 pages</span></div>
+        <a class="open" href="v4/index.html">Open concept 1 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
-  </header>
 
-  <!-- STAT STRIP -->
-  <div class="stat-strip">
-    <div class="wrap">
-      <div class="stat"><div class="n grad-text" data-count="8" data-suffix="s">8s</div><div class="l">To generate</div></div>
-      <div class="stat"><div class="n grad-text" data-count="50" data-suffix="+">50+</div><div class="l">Art styles</div></div>
-      <div class="stat"><div class="n grad-text" data-count="99.8" data-suffix="%" data-decimals="1">99.8%</div><div class="l">On-time delivery</div></div>
-      <div class="stat"><div class="n grad-text" data-count="40" data-suffix="+">40+</div><div class="l">Brand partners</div></div>
-    </div>
+    <p class="foot">Internal prototype — please don’t share externally.</p>
   </div>
-
-  <!-- VALUE -->
-  <section class="blk">
-    <div class="wrap">
-      <div class="sec-head rv">
-        <span class="eyebrow">Why it works</span>
-        <h2>Not a photo booth.<br>A <strong class="grad-text">reason to show up.</strong></h2>
-        <p>Emblem turns your audience into the content. Every card is a keepsake, a post, and a first-party contact, all from one selfie.</p>
-      </div>
-      <div class="value-grid">
-        <div class="vcard rv"><div class="edge"></div>
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#17c8e6" stroke-width="1.7" stroke-linecap="round"><path d="M4 18 L10 11 L14 14 L20 6"/><path d="M16 6h4v4"/></svg></div>
-          <h3>They play, not watch</h3>
-          <p>Guests become the star of their own card. Participation beats passive every time, and it is the moment they remember.</p>
-        </div>
-        <div class="vcard rv"><div class="edge"></div>
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FC31BB" stroke-width="1.7" stroke-linecap="round"><circle cx="18" cy="6" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 10.8 15.8 7.2M8.2 13.2 15.8 16.8"/></svg></div>
-          <h3>Built to be shared</h3>
-          <p>Every Emblem is designed for the feed. Guests post it themselves, so your reach grows without a media spend.</p>
-        </div>
-        <div class="vcard rv"><div class="edge"></div>
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FF7A00" stroke-width="1.7" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></div>
-          <h3>The data is yours</h3>
-          <p>An optional opt-in turns every card into a first-party contact you own, ready for the next campaign.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- USE CASES -->
-  <section class="blk" style="padding-top:0;">
-    <div class="wrap">
-      <div class="sec-head rv">
-        <span class="eyebrow">Use cases</span>
-        <h2>If you draw a crowd,<br>you have a <strong class="grad-text">use case.</strong></h2>
-      </div>
-      <div class="uc-grid">
-        <a class="uc rv" href="use-cases.html#sports">
-          <img class="uc-bg" src="images/cutouts/sc-sport.jpg" alt="">
-          <img class="uc-person" src="images/cutouts/ucp-sport.png" alt="Sports fans">
-          <span class="uc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <div class="uc-body"><div class="k">Sport</div><h3>Every fan, a card</h3><p>Repeat attendance and sponsor value, one selfie at a time.</p></div>
-        </a>
-        <a class="uc rv" href="use-cases.html#entertainment">
-          <img class="uc-bg" src="images/cutouts/sc-concert.jpg" alt="">
-          <img class="uc-person" src="images/cutouts/ucp-concert.png" alt="Concert fans">
-          <span class="uc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <div class="uc-body"><div class="k">Entertainment</div><h3>Proof they were there</h3><p>The souvenir that outlasts the encore.</p></div>
-        </a>
-        <a class="uc rv" href="use-cases.html#brands">
-          <img class="uc-bg" src="images/cutouts/sc-brand.jpg" alt="">
-          <img class="uc-person" src="images/cutouts/ucp-brand.png" alt="Brand creators">
-          <span class="uc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <div class="uc-body"><div class="k">Brands</div><h3>Be the collectible</h3><p>Not the logo they scroll past. The card they keep.</p></div>
-        </a>
-        <a class="uc rv" href="use-cases.html#corporate">
-          <img class="uc-bg" src="images/cutouts/sc-corporate.jpg" alt="">
-          <img class="uc-person" src="images/cutouts/ucp-corporate.png" alt="Corporate delegates">
-          <span class="uc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <div class="uc-body"><div class="k">Corporate</div><h3>A keepsake, not a tote bag</h3><p>The giveaway delegates actually take home.</p></div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="blk" id="cta" style="padding-top:0;">
-    <div class="wrap">
-      <div class="box rv">
-        <span class="eyebrow">Ready when you are</span>
-        <h2>Let's make your event<br><strong class="grad-text">worth collecting.</strong></h2>
-        <p>Book a 30-minute walkthrough. We'll show you exactly how Emblem works for your event.</p>
-        <a class="btn btn-primary" href="try.html">Create your card free</a>
-        <p style="margin-top:16px;font-size:13px;"><a href="contact.html" style="color:rgba(255,255,255,0.7);text-decoration:underline;text-underline-offset:3px;">Or book a demo for your team</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap">
-      <div class="foot-grid">
-        <div class="foot-brand">
-          <div class="logo-txt" style="color:var(--ink-2)">EMBLEM AI <span style="font-weight:400;color:var(--ink-3)">by Charles Elena</span></div>
-          <p>Any face, one tap, a collectible. Emblem AI by <a href="https://charleselena.com.au" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:3px">Charles Elena</a>.</p>
-          <div class="foot-social">
-            <a href="https://www.linkedin.com/company/charleselena" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-            <a href="https://www.instagram.com/charleselena" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-          </div>
-        </div>
-        <div class="foot-col"><h4>Platform</h4><a href="try.html">Create Your Card</a><a href="how-it-works.html">How It Works</a><a href="use-cases.html">Use Cases</a><a href="contact.html">Book A Demo</a></div>
-        <div class="foot-col"><h4>Company</h4><a href="contact.html">Contact</a><a href="https://charleselena.com.au" target="_blank" rel="noopener">Charles Elena</a></div>
-        <div class="foot-col"><h4>Get in touch</h4><a href="mailto:hello@charleselena.com.au">hello@charleselena.com.au</a></div>
-      </div>
-      <div class="foot-bot">
-        <p>© 2025 Emblem AI by Charles Elena. All rights reserved.</p>
-        <p><a href="https://charleselena.com.au/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://charleselena.com.au/terms" target="_blank" rel="noopener">Terms</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    /* ---- hero sample demo (samples only; full trial lives on try.html) ---- */
-    var GUESTS = [
-      { id:'streetwear', name:'Leo',   selfie:'images/cutouts/g-leo.png',   card:'images/cutouts/c-leo.png',   style:'Streetwear' },
-      { id:'popart',     name:'Sofia', selfie:'images/cutouts/g-sofia.png', card:'images/cutouts/c-sofia.png', style:'Pop Art' },
-      { id:'3d',         name:'Adam',  selfie:'images/cutouts/g-adam.png',  card:'images/cutouts/c-adam.png',  style:'Heroic 3D' },
-      { id:'anime',      name:'Kai',   selfie:'images/cutouts/g-kai.png',   card:'images/cutouts/c-kai.png',   style:'Anime Mech' },
-      { id:'cartoon',    name:'Noah',  selfie:'images/cutouts/g-noah.png',  card:'images/cutouts/c-noah.png',  style:'Cartoon' },
-      { id:'neon',       name:'Priya', selfie:'images/cutouts/g-priya.png', card:'images/cutouts/c-priya.png', style:'Neon' }
-    ];
-    var dState={ guest:null, phase:'idle' };
-    var guestRow=document.getElementById('guestRow'), stage=document.getElementById('stage'),
-        stageFace=document.getElementById('stageFace'), stageCard=document.getElementById('stageCard'),
-        stageEmpty=document.getElementById('stageEmpty'), stageBadge=document.getElementById('stageBadge'),
-        scan=document.getElementById('scan'), genBtn=document.getElementById('genBtn'), genStatus=document.getElementById('genStatus');
-
-    GUESTS.forEach(function(g){ var b=document.createElement('button'); b.className='guest'; b.setAttribute('aria-label',g.name); b.innerHTML='<img src="'+g.selfie+'" alt="'+g.name+'">'; b.onclick=function(){ pickSample(g); }; guestRow.appendChild(b); });
-    function highlightGuest(id){ [].forEach.call(guestRow.children,function(el,i){ el.classList.toggle('sel',GUESTS[i].id===id); }); }
-    function pickSample(g){ if(dState.phase==='working') return; dState.guest=g; dState.phase='idle'; stage.classList.remove('flipped'); stageEmpty.style.display='none'; stageFace.innerHTML='<img src="'+g.selfie+'" alt="'+g.name+'">'; stageBadge.textContent=g.name; highlightGuest(g.id); genBtn.disabled=false; genBtn.textContent='Generate card'; genStatus.textContent='Ready. Hit generate to see the '+g.style+' card.'; }
-    genBtn.onclick=function(){
-      if(genBtn.disabled) return;
-      if(dState.phase==='done'){ stage.classList.remove('flipped'); dState.phase='idle'; stageBadge.textContent=dState.guest.name; genBtn.textContent='Generate card'; genStatus.textContent='Pick another sample or generate again.'; return; }
-      dState.phase='working'; genBtn.classList.add('working'); genBtn.textContent='Generating…'; genBtn.disabled=true;
-      stageBadge.textContent='Generating'; scan.classList.add('on');
-      stageCard.innerHTML='<img src="'+dState.guest.card+'" alt="Emblem card">';
-      var msgs=['Reading the selfie…','Applying '+dState.guest.style+' style…','Rendering the Emblem…','Adding the finish…'];
-      var i=0; genStatus.textContent=msgs[0];
-      var iv=setInterval(function(){ i++; if(msgs[i]) genStatus.textContent=msgs[i]; },600);
-      setTimeout(function(){
-        clearInterval(iv); scan.classList.remove('on'); stage.classList.add('flipped');
-        stageBadge.textContent=dState.guest.style+' Edition'; dState.phase='done';
-        genBtn.classList.remove('working'); genBtn.disabled=false; genBtn.textContent='Generate again';
-        genStatus.innerHTML='That is a sample. <a href="try.html">Make your own with your selfie &rarr;</a>';
-      },2400);
-    };
-
-    var nav=document.getElementById('nav');
-    addEventListener('scroll',function(){ nav.classList.toggle('scrolled',scrollY>20); });
-    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:0.12});
-    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
-    var cio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; var el=e.target; cio.unobserve(el); var to=parseFloat(el.dataset.count),dec=parseInt(el.dataset.decimals||'0'),suf=el.dataset.suffix||'',t0=performance.now(),dur=1500; function step(now){ var p=Math.min((now-t0)/dur,1); var v=(1-Math.pow(1-p,3))*to; el.textContent=v.toFixed(dec)+suf; if(p<1) requestAnimationFrame(step); else el.textContent=to.toFixed(dec)+suf; } requestAnimationFrame(step); }); },{threshold:0.6});
-    document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
-    document.getElementById('burger').onclick=function(){ location.href='contact.html'; };
-  </script>
 </body>
 </html>
